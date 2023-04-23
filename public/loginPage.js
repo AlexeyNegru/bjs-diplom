@@ -1,5 +1,5 @@
 "use strict"
-const userForm = new userForm();
+const userForm = new UserForm();
 userForm.loginFormCallback = (data) => {
     ApiConnector.login(data, response => {
         if (response.success) {
@@ -19,7 +19,7 @@ userForm.registerFormCallback = (data) => {
             return
         } else {
             console.log(response.error);
-            userForm.setLoginErrorMessage(response.error); 
+            userForm.setRegisterErrorMessage(response.error); 
         }
     })
 }
