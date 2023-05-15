@@ -80,11 +80,11 @@ ApiConnector.getFavorites((response) => {
 })
 
 favoritesWidget.addUserCallback = (data) => {
-    ApiConnector.addUserFavorites(data, response => {
+    ApiConnector.addUserToFavorites(data, response => {
         if (response.success) {
             favoritesWidget.clearTable();
             favoritesWidget.fillTable(response.data);
-            moneyManager.updateUserList(response.data);
+            moneyManager.updateUsersList(response.data);
             let message = "Пользователь добавлен";
             favoritesWidget.setMessage(response.success, message);
         } else {
@@ -98,7 +98,7 @@ favoritesWidget.removeUserCallback = (data) => {
         if (response.success) {
             favoritesWidget.clearTable();
             favoritesWidget.fillTable(response.data);
-            moneyManager.updateUserList(response.data);
+            moneyManager.updateUsersList(response.data);
             let message = "Пользователь удален";
             favoritesWidget.setMessage(response.success, message);
         } else {
